@@ -4,6 +4,8 @@ import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
 import { DevicesComponent } from 'src/app/modules/devices/devices.component';
+import { SharedModule } from 'src/app/shared/shared.module';
+import { MatSidenavModule } from '@angular/material/sidenav'
 
 
 
@@ -15,7 +17,9 @@ import { DevicesComponent } from 'src/app/modules/devices/devices.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    SharedModule,
+    MatSidenavModule,
   ]
 })
 export class DefaultModule { }
