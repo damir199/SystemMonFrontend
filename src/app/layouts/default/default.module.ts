@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { DefaultComponent } from './default.component';
 import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.component';
 import { RouterModule } from '@angular/router';
+import { DevicesComponent } from 'src/app/modules/devices/devices.component';
 
 
 
 @NgModule({
   declarations: [
     DefaultComponent,
-    DashboardComponent
+    DashboardComponent,
+    DevicesComponent
   ],
   imports: [
     CommonModule,
