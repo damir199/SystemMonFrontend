@@ -16,6 +16,7 @@ import { RouterModule } from '@angular/router';
 import { LineComponent } from './widgets/line/line.component';
 
 import { HighchartsChartModule } from 'highcharts-angular';
+import { CardComponent } from './widgets/card/card.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    LineComponent
+    LineComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
@@ -43,7 +45,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
-    LineComponent
+    LineComponent,
+    CardComponent
   ]
 })
 export class SharedModule { }

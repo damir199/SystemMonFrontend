@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import HC_exporting from 'highcharts/modules/exporting';
 
 @Component({
   selector: 'app-widget-line',
@@ -20,11 +21,11 @@ export class LineComponent implements OnInit {
       },
 
         title: {
-            text: 'Solar Employment Growth by Sector, 2010-2016'
+            text: 'Line Chart for User/Viewer/Device Counts'
         },
     
         subtitle: {
-            text: 'Source: thesolarfoundation.com'
+            text: 'Will be Sourced from MongoDB'
         },
     
         yAxis: {
@@ -39,11 +40,7 @@ export class LineComponent implements OnInit {
             }
         },
     
-        legend: {
-            layout: 'vertical',
-            align: 'right',
-            verticalAlign: 'middle'
-        },
+ 
     
         plotOptions: {
             series: {
@@ -53,6 +50,13 @@ export class LineComponent implements OnInit {
                 pointStart: 2010
             }
         },
+        credits: {
+          enabled: false
+        },
+        exporting: {
+          enabled: true
+        },
+    
     
         series: [{
             name: 'Installation',
@@ -69,25 +73,12 @@ export class LineComponent implements OnInit {
         }, {
             name: 'Other',
             data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]
-        }],
-    
-        responsive: {
-            rules: [{
-                condition: {
-                    maxWidth: 500
-                },
-                chartOptions: {
-                    legend: {
-                        layout: 'horizontal',
-                        align: 'center',
-                        verticalAlign: 'bottom'
-                    }
-                }
-            }]
-        }
-    
-    }
+        }]
+      };
+    HC_exporting(Highcharts);
+  
 
+    
   
   
   }}
