@@ -18,7 +18,8 @@
     <mat-card fxFlex="33">
         <app-widget-card label="Stuff" total="bored" percentage="500"></app-widget-card>
     </mat-card>
-    
+  
+    </div>
 
 <br>
 
@@ -26,7 +27,14 @@
 
 <br>
 
-<div>
-    <div>Table</div>
-    <div>Pie</div>
-</div>
+
+    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+        <div fxFlex="40">Pie</div>
+            <div fxFlex="60">
+                <app-widget-pie></app-widget-pie>
+            </div>
+    </div>
+
+<br>
+<br>
+<br>
