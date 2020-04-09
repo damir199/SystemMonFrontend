@@ -12,6 +12,7 @@ export class CardComponent implements OnInit {
   @Input() label: string;
   @Input() total : string;
   @Input() percentage: string;
+  @Input() data: [];
 
   Highcharts = Highcharts;
   chartOptions = {};
@@ -43,20 +44,6 @@ export class CardComponent implements OnInit {
                 color: Highcharts.getOptions().colors[1]
             }
         }
-    }, { // Secondary yAxis
-        title: {
-            text: 'Rainfall',
-            style: {
-                color: Highcharts.getOptions().colors[0]
-            }
-        },
-        labels: {
-            format: '{value} mm',
-            style: {
-                color: Highcharts.getOptions().colors[0]
-            }
-        },
-        opposite: true
     }],
     tooltip: {
         shared: true
@@ -69,18 +56,10 @@ export class CardComponent implements OnInit {
     },
    
     series: [{
-        name: 'Rainfall',
-        type: 'column',
-        yAxis: 1,
-        data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
-        tooltip: {
-            valueSuffix: ' mm'
-        }
-
-    }, {
+       
         name: 'Temperature',
         type: 'spline',
-        data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6],
+        data: this.data,
         tooltip: {
             valueSuffix: '°C'
         }
@@ -93,6 +72,6 @@ export class CardComponent implements OnInit {
       window.dispatchEvent(
         new Event('resize')
       )
-    }, 100);
+    }, 300);
 
 }}
